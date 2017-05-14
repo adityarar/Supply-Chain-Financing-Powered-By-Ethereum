@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <title>Supply Chain Financing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
+  <script src="app/javascripts/jquery-3.2.1.js"></script>
+  <script src="app/javascripts/bootstrap-3.3.7.min.js"></script>
+  <script src="app/javascripts/landing.js"></script>
+  <link rel="stylesheet" href="app/css/animate.3.5.2.min.css">
+</head>
+
+<script>
+window.onload = function() {
+  $('body').show();
+  extractUserFromURL();
+};
+</script>
+
+<body style="display:none;">
+  <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;">
+    <h1>Supply Chain Financing</h1>
+    <p style="font-size:15px;">...</p>
+  </div>
+  <input type="hidden" id="username"/>
+  <div class="col-sm-4  centered animated fadeInRight" style="margin: 0 auto;float:none;"><!--fadeInRight -->
+      <form onsubmit="return submitForm('supplier.html')">
+        <input type="submit" class="btn btn-success btn-block" value="Supplier" />
+      </form>
+      <form onsubmit="return submitForm('buyer.html')">
+        <input type="submit" class="btn btn-success btn-block" value="Buyer" />
+      </form>
+      <form onsubmit="return submitForm('financier.html')">
+        <input type="submit" class="btn btn-success btn-block" value="Financier" />
+      </form>
+  </div>
+</body>

@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <title>Supplier Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="app/javascripts/supplier.js"></script>
+</head>
+<body>
+  <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;">
+    <h1>Create Invoice</h1>
+    <p style="font-size:15px;">Fill out all the details to create an invoice</p>
+  </div>
+
+  <div class="col-md-6 col-md-offset-4">
+    <form class="margin-bottom-40" onsubmit="return submitForm()">
+        <div class="row">
+      		<div class="col-md-6">
+      			<label for="invoiceRef">Invoice Reference</label>
+      			<input type="text" class="form-control" id="invoiceRef" placeholder="1234abcd">
+          </div>
+        </div>
+        <div class="row">
+      		<div class="col-md-6">
+      			<label for="createDate">Create Date</label>
+      			<input type="date" class="form-control" id="createDate" placeholder="12-03-2017">
+      		</div>
+        </div>
+        <div class="row">
+      		<div class="col-md-6">
+      			<label for="maturityDate">Maturity Date</label>
+      			<input type="date" class="form-control" id="exampleInputEmail1" placeholder="12-01-2017">
+          </div>
+        </div>
+        <div class="row">
+      		<div class="col-md-6">
+      			<label for="amount">Amount</label>
+      			<input type="text" class="form-control" id="amount" placeholder="Amount">
+          </div>
+        </div>
+        <div class="row">
+      		<div class="col-md-6">
+      			<label for="NOC-Attached">Attach NOC</label>
+      			<input type="file" class="form-control" id="NOCFile" placeholder="Upload your shit">
+          </div>
+        </div>
+        <div class="row">
+      		<div class="col-md-6">
+      			<label for="PO Detail">Upload PO Details</label>
+      			<input type="file" class="form-control" id="poDetail" placeholder="details">
+          </div>
+        </div>
+        <div>
+  		      <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+  	</form>
+  </div>
+</body>
