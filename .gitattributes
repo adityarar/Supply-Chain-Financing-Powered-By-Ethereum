@@ -1,1 +1,4 @@
 app/* linguist-vendored
+migrations/* linguist-vendored
+truffle.js linguist-vendored
+webpack.config.js linguist-vendored
