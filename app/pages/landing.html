@@ -1,13 +1,26 @@
 <html lang="en">
 <head>
-  <title>Supply Chain Financing</title>
+  <title>Landing Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
   <script src="app/javascripts/jquery-3.2.1.js"></script>
   <script src="app/javascripts/bootstrap-3.3.7.min.js"></script>
   <script src="app/javascripts/landing.js"></script>
   <link rel="stylesheet" href="app/css/animate.3.5.2.min.css">
+  <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
+  <style>
+  .btn-outline-success{
+     color: #000;
+     background-image: none;
+     background-color: rgba(0, 183, 224, 0.29);
+     border-color: #30c2da;
+  }
+  .btn-outline-success:hover {
+    color: #fff;
+    background-color: #4c95d4;
+    border-color: #135fa0;
+  }
+  </style>
 </head>
 
 <script>
@@ -17,21 +30,26 @@ window.onload = function() {
 };
 </script>
 
-<body style="display:none;">
+<body style="background-image:url('app/images/scm.jpg');opacity: 0.87;">
   <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;">
     <h1>Supply Chain Financing</h1>
-    <p style="font-size:15px;">...</p>
+    <p style="font-size:15px;">Powered By Ethereum</p>
   </div>
   <input type="hidden" id="username"/>
-  <div class="col-sm-4  centered animated fadeInRight" style="margin: 0 auto;float:none;"><!--fadeInRight -->
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <div class="col-sm-6 " style="margin: 0 auto;float:none;"><!--fadeInRight -->
       <form onsubmit="return submitForm('supplier.html')">
-        <input type="submit" class="btn btn-success btn-block" value="Supplier" />
+        <input type="submit" class="btn btn-block btn-outline-success animated fadeInDown" value="Supplier" />
       </form>
       <form onsubmit="return submitForm('buyer.html')">
-        <input type="submit" class="btn btn-success btn-block" value="Buyer" />
+        <input type="submit" class="btn btn-block btn-outline-success animated fadeInDown" value="Buyer" />
       </form>
       <form onsubmit="return submitForm('financier.html')">
-        <input type="submit" class="btn btn-success btn-block" value="Financier" />
+        <input type="submit" class="btn btn-block btn-outline btn-outline-success animated fadeInDown" value="Financier" />
       </form>
+  </div>
+
+  <div class="panel-footer" style="position:absolute;bottom:0px;width:100%">
+    <span class="pull-right">Team Nucleus</span>
   </div>
 </body>

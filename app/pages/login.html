@@ -1,13 +1,23 @@
 <html lang="en">
 <head>
-  <title>Supplier Page</title>
+  <title>Login Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
+  <script src="app/javascripts/jquery-3.2.1.js"></script>
+  <script src="app/javascripts/jquery-2.1.1.js"></script>
+  <script src="app/javascripts/bootstrap-3.3.7.min.js"></script>
   <script src="app/javascripts/supplier.js"></script>
 </head>
+<style>
+body{
+  background: #E0EAFC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  opacity: 0.95;
+}
+</style>
 <script>
   function submitForm(){
     var username = document.getElementById("publicKey").value;

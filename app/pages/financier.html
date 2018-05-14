@@ -1,1 +1,78 @@
-Financier view
+<html lang="en">
+<head>
+  <title>Financier Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
+  <script src="app/javascripts/jquery-3.2.1.js"></script>
+  <script src="app/javascripts/jquery-2.1.1.js"></script>
+  <script src="app/javascripts/bootstrap-3.3.7.min.js"></script>
+  <script src="app/javascripts/invoiceTable.js"></script>
+  <script src="app/javascripts/financier.js"></script>
+
+  <link rel="stylesheet" href="app/css/animate.3.5.2.min.css">
+  <link rel="stylesheet" href="app/css/font-awesome-4.7.0/css/font-awesome.min.css">
+  <style>
+  .modal {top: 12%; }
+  div>a{color:#9daab5;}
+  div>a:hover{color:#828282;}
+  body{
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    opacity: 0.95;
+  }
+  .table-hover>tbody>tr:not(:first-child):hover {
+    background-color: #a7d2dc;
+  }
+  </style>
+</head>
+
+  <div style="position:fixed;top:3px;left:3px;">
+    <a href='landing.html'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+  </div>
+  <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;">
+    <h1>Supply Chain Financing</h1>
+    <p style="font-size:15px;">Financier View</p>
+  </div>
+
+  <div class="col-md-6 col-md-offset-1">
+    <form class="margin-bottom-40">
+        <div class="row">
+      		<div class="" style="zoom:1.0;">
+            <h2 for="invoiceRef" style="font-size:20px;">Available Invoices(<span style="font-size:14px;">Click on a row to select it.</span>)</h2>
+            <table id="excelDataTable" class="table table-hover table-striped" border="1">
+             </table>
+          </div>
+        </div>
+  	</form>
+  </div>
+
+  <!-- Modal for input -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Propose Discounted Rate</h4>
+        </div>
+        <div class="modal-body">
+          <p>Enter the rate you wish to offer.</p>
+          <input type="number" class="form-control"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Offer</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel-footer" style="position:absolute;bottom:0px;width:100%">
+    <span class="pull-right">Team Nucleus</span>
+  </div>
+
+</body>

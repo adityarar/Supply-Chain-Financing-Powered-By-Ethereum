@@ -1,8 +1,10 @@
 function extractUserFromURL(){
   //alert("Extracting now..");
   var url = window.location.toString();
-  var username = url.split("?")[1].split("=")[1];
-  document.getElementById("username").value = username;
+  try{
+    var username = url.split("?")[1].split("=")[1];
+    document.getElementById("username").value = username;
+  }catch(err){}
 }
 
 function submitForm(url){

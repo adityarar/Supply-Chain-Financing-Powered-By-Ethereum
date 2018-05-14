@@ -3,20 +3,58 @@
   <title>Supplier Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
+  <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
+  <script src="app/javascripts/jquery-3.2.1.js"></script>
+  <script src="app/javascripts/jquery-2.1.1.js"></script>
+  <script src="app/javascripts/bootstrap-3.3.7.min.js"></script>
+  <script src="app/javascripts/invoiceTable.js"></script>
+  <link rel="stylesheet" href="app/css/animate.3.5.2.min.css">
+  <link rel="stylesheet" href="app/css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <script src="app/javascripts/invoiceTable.js"></script>
   <script src="app/javascripts/supplier.js"></script>
+  <style>
+    .modal {top: 12%; }
+    div>a{color:#9daab5;}
+    div>a:hover{color:#828282;}
+    body{
+      background: #E0EAFC;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      /*opacity: 0.95;*/
+    }
+    .nav-tabs li{
+      background-color: rgba(215, 215, 216, 0.68);
+    }
+    .table-hover>tbody>tr:not(:first-child):hover {
+      background-color: #a7d2dc;
+    }
+    .table-striped tbody tr.active td{
+      background-color: #7d9ab3 !important;
+    }
+  </style>
 </head>
 <body>
-  <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;">
-    <h1>Create Invoice</h1>
-    <p style="font-size:15px;">Fill out all the details to create an invoice</p>
+
+  <!-- Home Button -->
+  <div style="position:fixed;top:3px;left:3px;">
+    <a href='landing.html'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
   </div>
 
-  <div class="col-md-6 col-md-offset-4">
-    <form class="margin-bottom-40" onsubmit="return submitForm()">
+  <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;margin-bottom:0px;">
+    <h1>Supplier Options</h1>
+    <!-- <p style="font-size:15px;">Fill out all the details to create an invoice</p> -->
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a href="#">Create Invoice</a></li>
+      <li><a href="#">View Invoices</a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-6 col-md-offset-4 invoiceForm">
+    <form class="margin-bottom-40" onsubmit="return submitForm()" style="display:none;">
         <div class="row">
       		<div class="col-md-6">
       			<label for="invoiceRef">Invoice Reference</label>
@@ -44,7 +82,7 @@
         <div class="row">
       		<div class="col-md-6">
       			<label for="NOC-Attached">Attach NOC</label>
-      			<input type="file" class="form-control" id="NOCFile" placeholder="Upload your shit">
+      			<input type="file" class="form-control" id="NOCFile" placeholder="Upload your file">
           </div>
         </div>
         <div class="row">
@@ -57,5 +95,64 @@
   		      <button type="submit" class="btn btn-primary">Submit</button>
         </div>
   	</form>
+  </div>
+
+  <div class="col-md-12 col-md-offset-1 invoiceList" style="display:none;">
+    <form class="margin-bottom-40">
+        <div class="row">
+      		<div class="col-md-6" style="zoom:1.0;">
+            <h2 for="invoiceRef" style="font-size:20px;">Invoice List(<span style="font-size:14px;">Select an invoice to view biddings.</span>)</h2>
+            <table id="excelDataTable" class="table table-hover table-striped" border="0">
+             </table>
+          </div>
+        </div>
+  	</form>
+  </div>
+
+  <!-- Modal to view biddings made-->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Biddings Made on this invoice</h4>
+        </div>
+        <div class="modal-body">
+          <table class='table table-hover table-striped' id='invoiceBiddings'>
+            <tr>
+              <th>Financier-Id</th>
+              <th>Amount</th>
+            </tr>
+            <tr>
+              <td>3345221114</td>
+              <td>45000</td>
+            </tr>
+            <tr>
+              <td>3245424244</td>
+              <td>43000</td>
+            </tr>
+            <tr>
+              <td>5482957694</td>
+              <td>35000</td>
+            </tr>
+            <tr>
+              <td>7272743323</td>
+              <td>42000</td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Select</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel-footer" style="position:absolute;bottom:0px;width:100%">
+    <span class="pull-right">Team Nucleus</span>
   </div>
 </body>

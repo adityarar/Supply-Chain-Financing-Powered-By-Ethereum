@@ -5,105 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app/css/bootstrap-3.3.7.min.css">
   <script src="app/javascripts/jquery-3.2.1.js"></script>
+  <script src="app/javascripts/jquery-2.1.1.js"></script>
   <script src="app/javascripts/bootstrap-3.3.7.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="app/javascripts/invoiceTable.js"></script>
+  <script src="app/javascripts/buyer.js"></script>
   <link rel="stylesheet" href="app/css/animate.3.5.2.min.css">
+  <link rel="stylesheet" href="app/css/font-awesome-4.7.0/css/font-awesome.min.css">
+  <style>
+    .modal {top: 12%; }
+    div>a{color:#9daab5;}
+    div>a:hover{color:#828282;}
+    body{
+      background: #E0EAFC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      opacity: 0.95;
+    }
+  </style>
 </head>
-<body onLoad="buildHtmlTable('#excelDataTable')">
+<body onLoad="">
+  <div style="position:fixed;top:3px;left:3px;">
+    <a href='landing.html'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+  </div>
+
   <div class="jumbotron text-center" style="padding-top:10px;padding-bottom:10px;">
     <h1>Supply Chain Financing</h1>
     <p style="font-size:15px;">Buyer View</p>
   </div>
-  <script>
-    var myList = [{
-	"procUnit": "NYC",
-	"supplierRef": 112233,
-	"supplierKYC": true,
-	"buyerRef": 332211,
-	"buyerKYC": true,
-	"invoiceRef": 123456,
-	"createDate": "05/13/2017",
-	"maturityDate": "08/13/2017",
-	"amount": 50000,
-	"status": "R",
-	"discount": 0.9
-}, {
-	"procUnit": "NYC",
-	"supplierRef": 223344,
-	"supplierKYC": true,
-	"buyerRef": 443322,
-	"buyerKYC": true,
-	"invoiceRef": 234567,
-	"createDate": "05/13/2017",
-	"maturityDate": "06/13/2017",
-	"amount": 20000,
-	"status": "R",
-	"discount": 0.7
-}, {
-	"procUnit": "NYC",
-	"supplierRef": 334455,
-	"supplierKYC": true,
-	"buyerRef": 554433,
-	"buyerKYC": true,
-	"invoiceRef": 345678,
-	"createDate": "05/13/2017",
-	"maturityDate": "07/13/2017",
-	"amount": 30000,
-	"status": "R",
-	"discount": 0.6
-}];
 
-     // Builds the HTML Table out of myList.
-     function buildHtmlTable(selector) {
-       var columns = addAllColumnHeaders(myList, selector);
-
-       for (var i = 0; i < myList.length; i++) {
-         var row$ = $('<tr/>');
-         for (var colIndex = 0; colIndex < columns.length; colIndex++) {
-           var cellValue = myList[i][columns[colIndex]];
-           if (cellValue == null) cellValue = "";
-           row$.append($('<td/>').html(cellValue));
-         }
-         row$.append($('<td/>').html('<button type="accept" class="btn btn-primary">Accept</button>'));
-         row$.append($('<td/>').html('<button type="reject" class="btn btn-primary">Reject</button>'));
-
-         $(selector).append(row$);
-       }
-     }
-
-     // Adds a header row to the table and returns the set of columns.
-     // Need to do union of keys from all records as some records may not contain
-     // all records.
-     function addAllColumnHeaders(myList, selector) {
-       var columnSet = [];
-       var headerTr$ = $('<tr/>');
-
-       for (var i = 0; i < myList.length; i++) {
-         var rowHash = myList[i];
-         for (var key in rowHash) {
-           if ($.inArray(key, columnSet) == -1) {
-             columnSet.push(key);
-             headerTr$.append($('<th/>').html(key));
-           }
-         }
-       }
-       $(selector).append(headerTr$);
-
-       return columnSet;
-     }
-</script>
-
-
-  <div class="col-md-6 col-md-offset-2">
+  <div class="col-md-6 col-md-offset-1">
     <form class="margin-bottom-40">
         <div class="row">
-      		<div class="col-md-6">
-      			<label for="invoiceRef">Invoice Acceptance Queue</label>
-            <table id="excelDataTable" border="1">
+      		<div class="col-md-6" style="zoom:1.0;">
+            <h2 for="invoiceRef" style="font-size:20px;">Invoice Acceptance Queue</h2>
+            <table id="excelDataTable" class="table table-hover table-striped" border="0">
              </table>
           </div>
         </div>
-
   	</form>
+  </div>
+
+  <div class="panel-footer" style="position:absolute;bottom:0px;width:100%">
+    <span class="pull-right">Team Nucleus</span>
   </div>
 </body>
