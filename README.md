@@ -1,6 +1,6 @@
 # Supply Chain Financing powered by Ethereum
 
-Our project submission for the final round of the national level [hackathon](https://www.eventbrite.com/e/blockchain-india-week-hackathon-by-blockchain-storm-13-14-may17-ft-vitalik-buterin-tickets-32452083054) conducted by [Blockchain Storm](https://www.eventbrite.com/o/blockchain-storm-6118982129).
+Our [project](https://adityarar.github.io/Supply-Chain-Financing-Powered-By-Ethereum/) submission for the final round of the national level [hackathon](https://www.eventbrite.com/e/blockchain-india-week-hackathon-by-blockchain-storm-13-14-may17-ft-vitalik-buterin-tickets-32452083054) conducted by [Blockchain Storm](https://www.eventbrite.com/o/blockchain-storm-6118982129).
 
 **Project screenshots :**
 <br>
